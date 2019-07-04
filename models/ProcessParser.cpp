@@ -311,15 +311,20 @@ float ProcessParser::GetSysActiveCpuTime(vector<string> values) {
     cout << "GetSysActiveCpuTime: " << value << endl;
   }
 
-  return (
-      stof(values[CpuStates::kUser]) +
-          stof(values[CpuStates::kNice]) +
-          stof(values[CpuStates::kSystem]) +
-          stof(values[CpuStates::kIrq]) +
-          stof(values[CpuStates::kSoftIrq]) +
-          stof(values[CpuStates::kSteal]) +
-          stof(values[CpuStates::kGuest]) +
-          stof(values[CpuStates::kGuestNice]));
+  try {
+
+    return (
+        stof(values[CpuStates::kUser]) +
+            stof(values[CpuStates::kNice]) +
+            stof(values[CpuStates::kSystem]) +
+            stof(values[CpuStates::kIrq]) +
+            stof(values[CpuStates::kSoftIrq]) +
+            stof(values[CpuStates::kSteal]) +
+            stof(values[CpuStates::kGuest]) +
+            stof(values[CpuStates::kGuestNice]));
+  } catch (...) {
+    return 0;
+  }
 }
 
 float ProcessParser::GetSysIdleCpuTime(vector<string> values) {
