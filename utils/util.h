@@ -2,7 +2,8 @@
 // Created by Razvan Lung on 2019-07-04.
 //
 
-#pragma once
+#ifndef GRANDPARENT_H
+#define GRANDPARENT_H
 
 #include <string>
 #include <fstream>
@@ -61,3 +62,5 @@ ifstream Util::GetStream(const string &path) {
 
   return stream;
 }
+
+#endif /* GRANDPARENT_H */
