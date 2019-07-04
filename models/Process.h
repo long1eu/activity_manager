@@ -32,7 +32,7 @@ class Process {
   int pid_{};
   string user_;
   string cmd_;
-  float cpu_{};
-  float memory_{};
-  float time_{};
+  float cpu_;
+  float memory_;
+  float time_;
 };
