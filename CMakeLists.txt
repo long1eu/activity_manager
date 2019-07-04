@@ -4,7 +4,7 @@ project(activity_manager)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(
-
+        activity_manager
         main.cpp
         models/Process.cpp
         models/Process.h
