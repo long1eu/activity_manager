@@ -2,8 +2,7 @@
 // Created by Razvan Lung on 2019-07-04.
 //
 
-#ifndef PROCESS_PARSER_H_
-#define PROCESS_PARSER_H_
+#pragma once
 
 #include <fstream>
 #include <iostream>
@@ -26,7 +25,7 @@
 #include <unistd.h>
 
 #include "../utils/constants.h"
-#include "../utils/util.h"
+#include "../utils/Util.h"
 
 using namespace std;
 
@@ -58,4 +57,3 @@ class ProcessParser {
   static float GetSysIdleCpuTime(vector<string> values);
   static float GetSysActiveCpuTime(vector<string> values);
 };
-#endif /* PROCESS_PARSER_H_ */

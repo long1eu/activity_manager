@@ -2,7 +2,7 @@
 // Created by Razvan Lung on 2019-07-04.
 //
 
-#include "util.h"
+#include "Util.h"
 
 string Util::ConvertToTime(long int input_seconds) {
   long minutes = input_seconds / 60;

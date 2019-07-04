@@ -15,5 +15,5 @@ add_executable(
         models/SysInfo.cpp
         models/SysInfo.h
         utils/constants.h
-        utils/util.h
-        utils/util.cpp)
+        utils/Util.h
+        utils/Util.cpp)
