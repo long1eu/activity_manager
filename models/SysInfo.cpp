@@ -53,10 +53,8 @@ vector<string> SysInfo::GetCoresStats() const {
     float check;
     if (!cores_stats_[i].empty()) {
       try {
-
         check = stof(cores_stats_[i]);
       } catch (...) {
-        cout << "EEE " << cores_stats_[i] << endl;
         continue;
       }
     }

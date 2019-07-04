@@ -46,7 +46,6 @@ float ProcessParser::GetVmSize(int pid) {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
-      cout << "GetVmSize: " << values[1] << endl;
       result = (stof(values[1]) / float(1024 * 1024));
       break;
     }
@@ -67,13 +66,9 @@ float ProcessParser::GetCpuPercent(int pid) {
   vector<string> values(beg, end);
 
   float proc_up_time = ProcessParser::GetProcUpTime(pid);
-  cout << "s_time: " << values[14] << endl;
   float s_time = stof(values[14]);
-  cout << "cu_time: " << values[15] << endl;
   float cu_time = stof(values[15]);
-  cout << "cs_time: " << values[16] << endl;
   float cs_time = stof(values[16]);
-  cout << "start_time: " << values[21] << endl;
   float start_time = stof(values[21]);
   float uptime = ProcessParser::GetSysUpTime();
   float freq = sysconf(_SC_CLK_TCK);
@@ -170,21 +165,18 @@ float ProcessParser::GetSysRamPercent() {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
-      cout << "total_mem: " << values[1] << endl;
       total_mem = stof(values[1]);
     }
     if (line.compare(0, name2.size(), name2) == 0) {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
-      cout << "free_mem: " << values[1] << endl;
       free_mem = stof(values[1]);
     }
     if (line.compare(0, name3.size(), name3) == 0) {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
-      cout << "buffers: " << values[1] << endl;
       buffers = stof(values[1]);
     }
   }
