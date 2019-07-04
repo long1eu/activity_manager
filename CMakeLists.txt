@@ -4,7 +4,7 @@ project(activity_manager)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(
-        
+
         main.cpp
         models/Process.cpp
         models/Process.h
@@ -16,4 +16,4 @@ add_executable(
         models/SysInfo.h
         utils/constants.h
         utils/util.h
-)
+        utils/util.cpp)
