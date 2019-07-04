@@ -49,14 +49,18 @@ vector<string> SysInfo::GetCoresStats() const {
   vector<string> result = vector<string>();
   for (int i = 0; i < cores_stats_.size(); i++) {
     string temp = ("cpu" + to_string(i) + ": ");
+
     float check;
-    if (!cores_stats_[i].empty())
+    if (!cores_stats_[i].empty()) {
       check = stof(cores_stats_[i]);
+    }
+
     if (!check || cores_stats_[i] == "nan") {
       return vector<string>();
     }
+
     temp += Util::GetProgressBar(stof(cores_stats_[i]));
-    result.push_back(temp);
+    result.emplace_back(temp);
   }
   return result;
 }

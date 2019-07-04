@@ -24,6 +24,7 @@
 #include <time.h>
 #include <unistd.h>
 #include "../utils/constants.h"
+#include "../utils/util.h"
 
 using namespace std;
 
@@ -35,10 +36,10 @@ class ProcessParser {
  public:
   static string GetCmd(int pid);
   static vector<string> GetPidList();
-  static long GetVmSize(int pid);
+  static float GetVmSize(int pid);
   static float GetCpuPercent(int pid);
   static long int GetSysUpTime();
-  static long int GetProcUpTime(int pid);
+  static float GetProcUpTime(int pid);
   static string getProcUser(int pid);
   static vector<string> GetSysCpuPercent(int coreNumber = 0);
   static float GetSysRamPercent();
@@ -50,4 +51,8 @@ class ProcessParser {
   static string GetOSName();
   static float PrintCpuStats(const vector<string> &values1, const vector<string> &values2);
   static bool IsPidExisting(int pid);
+
+ private:
+  static float GetSysIdleCpuTime(vector<string> values);
+  static float GetSysActiveCpuTime(vector<string> values);
 };

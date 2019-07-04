@@ -8,8 +8,8 @@
 
 using namespace std;
 
-enum class CpuStates {
-  kUser, kNice, kSystem, kIdle, kIoWait, kIrq, kSoftIrq, kSteal, kGuest, kGuestNice
+enum CpuStates {
+  kUser = 1, kNice, kSystem, kIdle, kIoWait, kIrq, kSoftIrq, kSteal, kGuest, kGuestNice
 };
 
 class Path {
@@ -22,5 +22,3 @@ class Path {
   static string memInfoPath() { return "meminfo"; }
   static string versionPath() { return "version"; }
 };
-// Users/long1eu/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/191.7479.33/CLion.app/Contents/bin/cmake/mac/bin/cmake"
-// --build /Users/long1eu/CLionProjects/activity_manager/cmake-build-debug --target activity_manager -- -j 4//[100%] Built target activity_manager

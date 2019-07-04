@@ -13,15 +13,16 @@ using namespace std;
 
 class ProcessContainer {
 
- private:
-  vector<Process> list_;
-
  public:
   ProcessContainer() {
     RefreshList();
   }
 
+ public:
   void RefreshList();
   string PrintList();
   vector<vector<string>> GetList();
+
+ private:
+  vector<Process> list_;
 };

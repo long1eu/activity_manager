@@ -10,7 +10,7 @@ void ProcessContainer::RefreshList() {
 
   for (const string &pid : pid_list) {
     Process proc(pid);
-    list_.push_back(proc);
+    list_.emplace_back(proc);
   }
 }
 
@@ -35,12 +35,12 @@ vector<vector<string>> ProcessContainer::GetList() {
   for (int i = 0; i < processes.size(); i++) {
     if (i % 10 == 0 && i > 0) {
       vector<string> sub(&processes[i - 10], &processes[i]);
-      values.push_back(sub);
+      values.emplace_back(sub);
       lastIndex = i;
     }
     if ((i == (list_).size() - 1) && (i - lastIndex) < 10) {
       vector<string> sub(&processes[lastIndex], &processes[i + 1]);
-      values.push_back(sub);
+      values.emplace_back(sub);
     }
   }
 

@@ -12,7 +12,7 @@ class Process {
  public:
   Process();
   explicit Process(const string &pid);
-  Process(int pid, string user, string cmd, float cpu, long memory, long up_time);
+  Process(int pid, string user, string cmd, float cpu, float memory, float up_time);
 
  public:
   int pid() const;
@@ -23,10 +23,10 @@ class Process {
   void cmd(const string &cmd);
   float cpu() const;
   void cpu(float cpu);
-  long memory() const;
-  void memory(long memory);
-  long time() const;
-  void time(long time);
+  float memory() const;
+  void memory(float memory);
+  float time() const;
+  void time(float time);
 
   string GetProcess();
 
@@ -35,6 +35,6 @@ class Process {
   string user_;
   string cmd_;
   float cpu_{};
-  long memory_{};
-  long time_{};
+  float memory_{};
+  float time_{};
 };
