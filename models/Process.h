@@ -1,7 +1,7 @@
 //
 // Created by Razvan Lung on 2019-07-04.
 //
-
+#pragma once
 
 #include <string>
 #include "ProcessParser.h"
