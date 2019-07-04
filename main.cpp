@@ -1,6 +1,4 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "hicpp-signed-bitwise"
-#pragma clang diagnostic ignored "-Wmissing-noreturn"
+#pragma once
 
 #include <iostream>
 #include <thread>
@@ -105,5 +103,3 @@ int main(int argc, char *argv[]) {
   printMain(sys, procs);
   return 0;
 }
-
-#pragma clang diagnostic pop
