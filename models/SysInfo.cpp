@@ -57,6 +57,7 @@ vector<string> SysInfo::GetCoresStats() const {
         check = stof(cores_stats_[i]);
       } catch (...) {
         cout << "EEE " << cores_stats_[i] << endl;
+        continue;
       }
     }
 
