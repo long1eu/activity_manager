@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <string>
+#include <vector>
 #include "ProcessParser.h"
 
 using namespace std;
