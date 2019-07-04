@@ -67,9 +67,13 @@ float ProcessParser::GetCpuPercent(int pid) {
   vector<string> values(beg, end);
 
   float proc_up_time = ProcessParser::GetProcUpTime(pid);
+  cout << "s_time: " << values[14] << endl;
   float s_time = stof(values[14]);
+  cout << "cu_time: " << values[15] << endl;
   float cu_time = stof(values[15]);
+  cout << "cs_time: " << values[16] << endl;
   float cs_time = stof(values[16]);
+  cout << "start_time: " << values[21] << endl;
   float start_time = stof(values[21]);
   float uptime = ProcessParser::GetSysUpTime();
   float freq = sysconf(_SC_CLK_TCK);
