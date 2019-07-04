@@ -1,4 +1,5 @@
 #!/bin/bash
+make clean
 clear
 cd ..
 git pull
