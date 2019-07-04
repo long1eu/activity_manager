@@ -170,18 +170,21 @@ float ProcessParser::GetSysRamPercent() {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
+      cout << "total_mem: " << values[1] << endl;
       total_mem = stof(values[1]);
     }
     if (line.compare(0, name2.size(), name2) == 0) {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
+      cout << "free_mem: " << values[1] << endl;
       free_mem = stof(values[1]);
     }
     if (line.compare(0, name3.size(), name3) == 0) {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
+      cout << "buffers: " << values[1] << endl;
       buffers = stof(values[1]);
     }
   }
@@ -304,14 +307,19 @@ bool ProcessParser::IsPidExisting(int pid) {
 }
 
 float ProcessParser::GetSysActiveCpuTime(vector<string> values) {
-  return (stof(values[CpuStates::kUser]) +
-      stof(values[CpuStates::kNice]) +
-      stof(values[CpuStates::kSystem]) +
-      stof(values[CpuStates::kIrq]) +
-      stof(values[CpuStates::kSoftIrq]) +
-      stof(values[CpuStates::kSteal]) +
-      stof(values[CpuStates::kGuest]) +
-      stof(values[CpuStates::kGuestNice]));
+  for (const string &value:values) {
+    cout << "GetSysActiveCpuTime: " << value << endl;
+  }
+
+  return (
+      stof(values[CpuStates::kUser]) +
+          stof(values[CpuStates::kNice]) +
+          stof(values[CpuStates::kSystem]) +
+          stof(values[CpuStates::kIrq]) +
+          stof(values[CpuStates::kSoftIrq]) +
+          stof(values[CpuStates::kSteal]) +
+          stof(values[CpuStates::kGuest]) +
+          stof(values[CpuStates::kGuestNice]));
 }
 
 float ProcessParser::GetSysIdleCpuTime(vector<string> values) {
