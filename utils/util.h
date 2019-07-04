@@ -12,7 +12,7 @@ class Util {
  public:
   static string ConvertToTime(long int input_seconds);
   static string GetProgressBar(const float &percent);
-  static void GetStream(const string &path, ifstream &stream);
+  static ifstream GetStream(const string &path);
 };
 
 string Util::ConvertToTime(long int input_seconds) {
@@ -50,10 +50,13 @@ string Util::GetProgressBar(const float &percent) {
   return result.str();
 }
 
-void Util::GetStream(const string &path, ifstream &stream) {
+ifstream Util::GetStream(const string &path) {
+  ifstream stream;
   stream.open(path, ifstream::in);
   if (!stream && !stream.is_open()) {
     stream.close();
     throw runtime_error("Non-existing PID.");
   }
+
+  return stream;
 }
