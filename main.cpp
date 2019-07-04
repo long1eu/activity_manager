@@ -11,7 +11,6 @@
 #include <time.h>
 #include <sstream>
 #include <iomanip>
-#include "util.h"
 
 #include "models/SysInfo.h"
 #include "models/ProcessContainer.h"
