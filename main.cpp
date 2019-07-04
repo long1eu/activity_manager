@@ -64,14 +64,14 @@ void getProcessListToConsole(vector<string> processes, WINDOW *win) {
     mvwprintw(win, 2 + i, 2, GetCString(processes[i]));
   }
 }
-void printMain(const SysInfo &sys, ProcessContainer procs) {
+void printMain(const SysInfo &sys, ProcessContainer procs, WINDOW *sys_win) {
   initscr();                        /* Start curses mode 		  */
   noecho();                         // not printing input values
   cbreak();                         // Terminating on classic ctrl + c
   start_color();                    // Enabling color change of text
   int yMax, xMax;
   getmaxyx(stdscr, yMax, xMax);     // getting size of window measured in lines and columns(column one char length)
-  WINDOW *sys_win = newwin(17, xMax - 1, 0, 0);
+  sys_win = newwin(17, xMax - 1, 0, 0);
   WINDOW *proc_win = newwin(15, xMax - 1, 18, 0);
 
   init_pair(1, COLOR_BLUE, COLOR_BLACK);
@@ -116,7 +116,9 @@ int main(int argc, char *argv[]) {
   ProcessContainer procs;
   SysInfo sys;
 
+  WINDOW *sys_win = nullptr;
   //string s = writeToConsole(sys);
-  printMain(sys, procs);
+  printMain(sys, procs, sys_win);
+  cout << sys_win << endl;
   return 0;
 }
