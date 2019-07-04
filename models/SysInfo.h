@@ -2,8 +2,7 @@
 // Created by Razvan Lung on 2019-07-04.
 //
 
-#ifndef SYS_INFO_H_
-#define SYS_INFO_H_
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -50,5 +49,3 @@ class SysInfo {
   void SetCpuCoresStats();
   vector<string> GetCoresStats() const;
 };
-
-#endif /* SYS_INFO_H_ */
