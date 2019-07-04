@@ -220,8 +220,7 @@ int ProcessParser::GetTotalThreads() {
   int result = 0;
   string name = "Threads:";
   vector<string> _list = ProcessParser::GetPidList();
-  for (int i = 0; i < _list.size(); i++) {
-    string pid = _list[i];
+  for (const string &pid : _list) {
     ifstream stream = Util::GetStream(Path::basePath() + pid + Path::statusPath());
     while (getline(stream, line)) {
       if (line.compare(0, name.size(), name) == 0) {
