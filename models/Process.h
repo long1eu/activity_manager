@@ -2,12 +2,7 @@
 // Created by Razvan Lung on 2019-07-04.
 //
 
-#ifndef PROCESS_H_
-#define PROCESS_H_
-
 #include "ProcessParser.h"
-
-#endif /* PROCESS_H_ */
 
 using namespace std;
 
