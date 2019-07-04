@@ -2,8 +2,7 @@
 // Created by Razvan Lung on 2019-07-04.
 //
 
-#ifndef PROCESS_CONTAINER_H_
-#define PROCESS_CONTAINER_H_
+#pragma once
 
 #include "Process.h"
 #include "ProcessParser.h"
@@ -25,5 +24,3 @@ class ProcessContainer {
  private:
   vector<Process> list_;
 };
-
-#endif /* PROCESS_CONTAINER_H_ */
