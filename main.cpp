@@ -117,8 +117,7 @@ int main(int argc, char *argv[]) {
   SysInfo sys;
 
   WINDOW *sys_win = nullptr;
-  //string s = writeToConsole(sys);
   printMain(sys, procs, sys_win);
-  cout << sys_win << endl;
+  WriteSysInfoToConsole(sys, sys_win);
   return 0;
 }
