@@ -274,7 +274,7 @@ string ProcessParser::GetOSName() {
   ifstream stream = Util::GetStream("/etc/os-release");
   while (getline(stream, line)) {
     if (line.compare(0, name.size(), name) == 0) {
-      size_t found = line.find("=");
+      size_t found = line.find('=');
       found++;
       string result = line.substr(found);
       result.erase(remove(result.begin(), result.end(), '"'), result.end());
