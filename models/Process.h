@@ -7,6 +7,8 @@
 
 #include "ProcessParser.h"
 
+#endif /* PROCESS_H_ */
+
 using namespace std;
 
 class Process {
@@ -39,5 +41,3 @@ class Process {
   float memory_{};
   float time_{};
 };
-
-#endif /* PROCESS_H_ */
