@@ -208,6 +208,7 @@ int ProcessParser::GetNumberOfCores() {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
+      cout << "GetNumberOfCores: " << values[3] << endl;
       return stoi(values[3]);
     }
   }
