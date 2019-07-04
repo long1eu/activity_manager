@@ -90,7 +90,6 @@ long int ProcessParser::GetSysUpTime() {
   istringstream buf(line);
   istream_iterator<string> beg(buf), end;
   vector<string> values(beg, end);
-  cout << "GetSysUpTime: " << values[0] << endl;
   return stoi(values[0]);
 }
 
@@ -106,6 +105,7 @@ float ProcessParser::GetProcUpTime(int pid) {
 
   vector<string> values(beg, end); // done!
 
+  cout << "GetProcUpTime: " << values[13] << endl;
   return stof(values[13]) / sysconf(_SC_CLK_TCK) * 1.0f;
 }
 
