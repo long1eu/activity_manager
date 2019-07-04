@@ -21,6 +21,7 @@ void SysInfo::SetLastCpuMeasures() {
 }
 
 void SysInfo::SetCpuCoresStats() {
+  cout << current_cpu_cores_stats_.size() << endl;
   for (int i = 0; i < current_cpu_cores_stats_.size(); i++) {
     current_cpu_cores_stats_[i] = ProcessParser::GetSysCpuPercent(i);
   }
@@ -49,7 +50,6 @@ vector<string> SysInfo::GetCoresStats() const {
   vector<string> result = vector<string>();
   for (int i = 0; i < cores_stats_.size(); i++) {
     string temp = ("cpu" + to_string(i) + ": ");
-    cout << "cores_stats_: " << cores_stats_[i] << endl << endl;
 
     float check;
     if (!cores_stats_[i].empty()) {
