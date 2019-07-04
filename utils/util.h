@@ -2,8 +2,8 @@
 // Created by Razvan Lung on 2019-07-04.
 //
 
-#ifndef UTIL_H
-#define UTIL_H
+#ifndef UTIL_H_
+#define UTIL_H_
 
 #include <string>
 #include <fstream>
@@ -63,4 +63,4 @@ ifstream Util::GetStream(const string &path) {
   return stream;
 }
 
-#endif /* UTIL_H */
+#endif /* UTIL_H_ */

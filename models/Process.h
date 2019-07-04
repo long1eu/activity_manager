@@ -1,7 +1,9 @@
 //
 // Created by Razvan Lung on 2019-07-04.
 //
-#pragma once
+
+#ifndef PROCESS_H_
+#define PROCESS_H_
 
 #include "ProcessParser.h"
 
@@ -37,3 +39,5 @@ class Process {
   float memory_{};
   float time_{};
 };
+
+#endif /* PROCESS_H_ */
