@@ -46,6 +46,7 @@ float ProcessParser::GetVmSize(int pid) {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
+      cout << "GetVmSize: " << values[1] << endl;
       result = (stof(values[1]) / float(1024 * 1024));
       break;
     }
@@ -208,7 +209,6 @@ int ProcessParser::GetNumberOfCores() {
       istringstream buf(line);
       istream_iterator<string> beg(buf), end;
       vector<string> values(beg, end);
-      cout << "GetNumberOfCores: " << values[3] << endl;
       return stoi(values[3]);
     }
   }

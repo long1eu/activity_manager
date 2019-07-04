@@ -7,7 +7,6 @@
 Process::Process() = default;
 
 Process::Process(const string &stringPid) {
-  cout << "Process: " << stringPid << endl;
   pid_ = stoi(stringPid);
   user_ = ProcessParser::getProcUser(pid_);
   memory_ = ProcessParser::GetVmSize(pid_);
