@@ -33,7 +33,7 @@ void WriteSysInfoToConsole(SysInfo sys, WINDOW *sys_win) {
   wattron(sys_win, COLOR_PAIR(1));
   wprintw(sys_win, GetCString(Util::GetProgressBar(sys.cpu_percent())));
   wattroff(sys_win, COLOR_PAIR(1));
-  mvwprintw(sys_win, 5, 2, GetCString(("Other cores:")));
+  mvwprintw(sys_win, 5, 2, GetCString("Other cores:"));
   wattron(sys_win, COLOR_PAIR(1));
   vector<string> val = sys.GetCoresStats();
   for (int i = 0; i < val.size(); i++) {

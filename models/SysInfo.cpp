@@ -49,6 +49,7 @@ vector<string> SysInfo::GetCoresStats() const {
   vector<string> result = vector<string>();
   for (int i = 0; i < cores_stats_.size(); i++) {
     string temp = ("cpu" + to_string(i) + ": ");
+    cout << "cores_stats_: " << cores_stats_[i] << endl;
 
     float check;
     if (!cores_stats_[i].empty()) {
