@@ -21,4 +21,4 @@ add_executable(
         utils/Util.h
         utils/Util.cpp)
 
-target_link_libraries(lncurses)
+target_link_libraries(${PROJECT_NAME} ncurses)
