@@ -307,12 +307,7 @@ bool ProcessParser::IsPidExisting(int pid) {
 }
 
 float ProcessParser::GetSysActiveCpuTime(vector<string> values) {
-  for (const string &value:values) {
-    cout << "GetSysActiveCpuTime: " << value << endl;
-  }
-
   try {
-
     return (
         stof(values[CpuStates::kUser]) +
             stof(values[CpuStates::kNice]) +

@@ -52,7 +52,12 @@ vector<string> SysInfo::GetCoresStats() const {
 
     float check;
     if (!cores_stats_[i].empty()) {
-      check = stof(cores_stats_[i]);
+      try {
+
+        check = stof(cores_stats_[i]);
+      } catch (...) {
+        cout << "EEE" << endl;
+      }
     }
 
     if (!check || cores_stats_[i] == "nan") {
