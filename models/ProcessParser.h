@@ -5,15 +5,15 @@
 #pragma once
 
 #include <fstream>
-#include <algorithm>
 #include <iostream>
+#include <stdio.h>
+#include <algorithm>
 #include <math.h>
 #include <thread>
 #include <chrono>
 #include <iterator>
 #include <string>
 #include <stdlib.h>
-#include <stdio.h>
 #include <vector>
 #include <fstream>
 #include <sstream>
@@ -23,6 +23,7 @@
 #include <dirent.h>
 #include <time.h>
 #include <unistd.h>
+
 #include "../utils/constants.h"
 #include "../utils/util.h"
 
