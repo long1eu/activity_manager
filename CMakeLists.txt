@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
 project(activity_manager)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 14)
 set(GCC_COVERAGE_LINK_FLAGS "-lncurses")
-SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}")
 
 add_executable(
         activity_manager
@@ -19,3 +20,5 @@ add_executable(
         utils/constants.h
         utils/Util.h
         utils/Util.cpp)
+
+target_link_libraries(lncurses)
