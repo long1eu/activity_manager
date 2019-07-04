@@ -117,7 +117,13 @@ int main(int argc, char *argv[]) {
   SysInfo sys;
 
   WINDOW *sys_win = nullptr;
-  printMain(sys, procs, sys_win);
+  //printMain(sys, procs, sys_win);
+  initscr();                        /* Start curses mode 		  */
+  noecho();                         // not printing input values
+  cbreak();                         // Terminating on classic ctrl + c
+  start_color();                    // Enabling color change of text
+  int yMax, xMax;
+  getmaxyx(stdscr, yMax, xMax);     // getting siz
   WriteSysInfoToConsole(sys, sys_win);
   return 0;
 }
