@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 #include "ProcessParser.h"
-#import "../utils/util.h"
+#include "../utils/util.h"
 
 class SysInfo {
  private:
